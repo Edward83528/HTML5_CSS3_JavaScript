@@ -1,0 +1,24 @@
+  
+        /*文字選擇器選擇body元素*/
+        /*在head元素中加入stytle元素定義樣式表*/
+        /* stytle中只能放css內容*/
+        /* stytle中代表css,把程式跟樣式分開,利用元素選擇器寫在stytle中*/
+       /*選擇器又可分元素選擇器和類別選擇器和識別選擇器*/
+       /*元素選擇器*/
+        body{
+            background:#00FF00;
+        }
+        ul{
+             color:blue;
+        }
+        /*類別選擇器*/
+        .class1{
+            color:red;
+        }
+        li.class2{
+            color:green;
+        }
+        /*識別選擇器(要在html的元素中加入id屬性)*/
+        #id1{
+            color:#FFFF00;
+        }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>css練習</title>
+        <!--在head元素中加入stytle元素定義樣式表
+            stytle中只能放css內容
+            stytle中代表css,把程式跟樣式分開,利用元素選擇器寫在stytle中
+            可將css獨立成一個檔案(副檔名.css)並在html中用link元素將它連結
+            如果同一元素同時使用外部跟內部css樣式,會以內部css為主而只有外部的話,外部宣告句越晚出現優先權越高
+        -->
+        <!--連結外部css檔
+            rel="stylesheet"表示連結的是css檔
+        -->
+        <link rel="stylesheet" href="stytle.css">
+          </head>
+        <body>
+            <h1>資工系所必修科目</h1>
+            <ul>
+                <!--在元素中定義類別-->
+                <li class="class1">微積分</li>
+                 <li  class="class2">物理</li>
+                  <li class="class2">程式語言</li>
+                   <li id="id1">多媒體導論</li>
+                
+            </ul>
+        </body>
+  
+</html>
