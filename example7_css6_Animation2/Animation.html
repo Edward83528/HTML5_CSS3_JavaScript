@@ -4,14 +4,16 @@
         <meta Charset="UTF-8">
         <title>css動畫</title>
         <style>
+        /*印出框線*/
         ol{border:2px dotted orange;}
         li{
             margin:3px;
             width:8em;
             border-right-style:solid;
-             border-right-color:red;
+            border-right-color:red;
             
         }
+        /*定義影片*/
 @-webkit-keyframes v1 {
 from{border-right-width:0px;}
 to{border-right-width:150px;}
@@ -24,6 +26,10 @@ to{border-right-width:50px;}
 from{border-right-width:0px;}
 to{border-right-width:200px;}
   } 
+    /*用id選擇器建立所要的動畫效果*/
+    /*animation為播影片,播v1 v2 v3,播10秒鐘,infinite為無限播放*/
+     /*-webkit-是能在google瀏覽器播放*/
+     /*linear為固定的速率,可代換為ease(預設值):先快後慢/ease-in:先慢後快/ease-out:先塊後慢,但前面的快較緩和*/
   #ball1{
     -webkit-animation: v1 10s linear infinite;
       border-left-width:150px;
