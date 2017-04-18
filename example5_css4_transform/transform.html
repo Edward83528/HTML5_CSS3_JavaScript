@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta Charset="UTF-8">
+        <title>會變形的正方型</title>
+        <style type="text/css">
+   .transform {
+    width: 80px;
+    height: 80px;
+    /*背景色*/
+    background-color: blue;
+    /*框線*/
+    border: 1px solid Gray;
+     /*margin為容器跟容器之間的距離*/
+    margin: 30px;
+    /*padding為內容物跟容器間的距離*/
+    padding: 10px;
+    /*transition為變化,1秒鐘改變,linear固定速率*/
+    transition: all 1s linear;
+}
+/*hover為滑鼠經過物體所觸發的事*/
+.transform:hover{
+    /*rotate:指定元素以參考點為中心軸 2D 旋轉 360 度。*/
+    /*skewX(θ)指定元素以參考點為中心軸沿著橫向傾斜 θ 度。*/
+    /*skewY(θ)指定元素以參考點為中心軸沿著縱向傾斜 θ 度。*/
+    /*scaleX(m)指定元素由參考點橫向縮放 m 倍。*/
+    /*scaleY(m)指定元素由參考點縱向縮放 m 倍。*/
+    /*translateX(o)指定元素由參考點橫向移動 o 距離。*/
+    /*translateY(o)指定元素由參考點縱向移動 o 距離。*/
+     transform: rotate(360deg);/*變形*/
+     /*顏色變為紅色*/
+    background-color: red;
+    /*寬變為300px*/
+    width:300px;
+    
+}
+        </style>
+    </head>
+    <body>
+        <!--div為一個容器-->
+        <div class="transform">正方形</div>
+    </body>
+</html>
