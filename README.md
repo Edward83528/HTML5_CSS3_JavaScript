@@ -8,7 +8,7 @@
  
  git add .
  
- git commit -m "initial commit"
+ git commit -m "想要打的描述"
  
  git remote add origin git@github.com:harry83528/HTML5_CSS3_JavaScript.git
  
@@ -22,7 +22,7 @@
  
  git add .
  
- git commit -m "initial commit"
+ git commit -m "想要打的描述"
  
  git push  origin
  
