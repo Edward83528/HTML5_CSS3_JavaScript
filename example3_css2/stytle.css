@@ -1,0 +1,47 @@
+body{
+      color: purple;
+    background-color: #d8da3d;
+    /*字形設定用 font-family*/
+        font-family: Georgia, "Times New Roman",Times, serif;
+        /*padding為容器(在這為邊界)和內容物的距離,em11代表原距離放大11倍*/
+        padding-left: 11em;
+}
+  h1 {
+        /*字形設定用 font-family*/
+        /*先出現的字體先選,如果電腦沒有那字體就用下一個字體,那電腦都沒有的話就用瀏覽器預設字體*/
+    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif
+    }
+   
+      ul.navbar {
+           /*list-style-type 可以用來設定 ul li 或 ol li 的項目符號*/
+              list-style-type: none;
+               padding: 0;
+               margin: 0;
+                /*把無次序清單用絕對位置*/
+          position: absolute;
+          top: 2em;
+          left: 1em;
+         width: 9em 
+          
+      }
+        ul.navbar li {
+    background: white;
+    margin: 0.5em 0;
+    padding: 0.3em;
+    /*把右邊1em距離設為黑色*/
+    border-right: 1em solid black }
+    
+  ul.navbar a {
+     /*text-decoration 用來替網頁的文字做特效*/
+    text-decoration: none }
+    /*超連結未連結為藍色*/
+  a:link {
+    color: blue }
+   /*超連結以連結過變紅色*/
+  a:visited {
+    color: red }
+    address {
+    margin-top: 1em;
+    padding-top: 1em;
+    /*把文本跟底端簽名分開的一個水平線規則*/
+    border-top: thin dotted }

@@ -6,7 +6,8 @@
        /*選擇器又可分元素選擇器和類別選擇器和識別選擇器*/
        /*元素選擇器*/
         body{
-            background:#00FF00;
+            background:#FF0000;
+            font:2em Georgia;
         }
         ul{
              color:blue;
