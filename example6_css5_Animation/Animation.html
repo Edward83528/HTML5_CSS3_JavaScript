@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta Charset="UTF-8">
+        <title>css動畫</title>
+        <style type="text/css">
+        /*id選擇器選擇test*/
+     #test {
+         /*設定為絕對位置*/
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /*背景為綠色*/
+    background-color: Green;
+    /*animation為播影片,播changeColor,播10秒鐘*/
+    -webkit-animation: changeColor 10s;
+  }
+     /*changeColor可以說是影片,透過keyframes定義片名*/
+  @-webkit-keyframes changeColor {
+     0% { background-color: Red; width: 100px; height: 100px; left: 10px; top: 10px;}
+    50% { background-color: Blue; width: 200px; height: 200px; left: 300px; top: 300px; }
+   100% { background-color: Green; width: 100px; height: 100px; left: 10px; top: 10px; }
+  } 
+            
+        </style>
+    </head>
+    <body>
+        <div id="test">正方形</div>
+    </body>
+</html>
