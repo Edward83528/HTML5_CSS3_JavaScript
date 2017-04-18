@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta Charset="UTF-8">
+        <title>會動的雲</title>
+<style type="text/css">
+	body{
+		color:red;
+	}
+	#banner {
+	position: relative;
+	width: 800px;
+	height: 168px;
+	margin: 0px auto;
+	overflow: hidden;/*裡面的物品超過容器hidden為看不到,預設為visible看的到,scrool為卷軸*/
+	outline: 1px solid gray;/*框*/
+}
+#bannerText {
+    /*設定絕對位置*/
+	position: absolute;
+	right: 15px;
+	top: 8px;
+	font-family: Arial;/*字型預設為Arial*/
+	font-style: italic;/*字體為斜體*/
+	font-size: 20px;/*大小為20px*/
+	color: DarkBlue;
+}
+#bannerImage {
+	position: relative;
+	width: 1800px;/*要設1100以上*/
+	height: 168px;
+	background-image: url('cloud.jpg');
+	background-repeat: repeat-x;/*向x方向重複*/
+	-webkit-animation: rollImage linear 12s infinite;
+	 -moz-animation: rollImage linear 12s infinite;
+    -ms-animation: rollImage linear 12s infinite;
+    animation: rollImage linear 12s infinite;
+}
+/*可支援gool瀏覽器*/
+@-webkit-keyframes rollImage {
+	from { right: 0px; }
+	to { right: 300px; }
+}
+/*可支援IE*/
+@-moz-keyframes rollImage {
+	from { right: 0px; }
+	to { right: 300px; }
+}
+ /*可支援FireFox*/
+@-ms-keyframes rollImage {
+	from { right: 0px; }
+	to { right: 300px; }
+}
+/*不必一一定義,通用版(所有瀏覽器都可用)*/
+@keyframes rollImage {
+	from { right: 0px; }
+	to { right: 300px; }
+}
+
+</style>
+    </head>
+    <body>
+    	<div id="banner">
+		<div id="bannerImage"></div>
+		<div id="bannerText">Rolling Clouds</div>
+	</div>
+    </body>
+</html>
