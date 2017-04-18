@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--利用css的thansition特效只能配合hover或active選擇器,在特定時機產生動畫效果,如果想不只在這兩種時機以外發生,就用Animatoins-->
 <html>
     <head>
         <meta Charset="UTF-8">
@@ -12,13 +13,17 @@
     height: 100px;
     /*背景為綠色*/
     background-color: Green;
-    /*animation為播影片,播changeColor,播10秒鐘*/
-    -webkit-animation: changeColor 10s;
+    /*animation為播影片,播changeColor,播10秒鐘,infinite為無限播放*/
+     /*-webkit-是能在google瀏覽器播放*/
+       /*linear為固定的速率,可代換為ease(預設值):先快後慢/ease-in:先慢後快/ease-out:先塊後慢,但前面的快較緩和*/
+    -webkit-animation: changeColor 10s ease-in infinite;
   }
      /*changeColor可以說是影片,透過keyframes定義片名*/
   @-webkit-keyframes changeColor {
+      /*畫格的規則可用百分比數字或關鍵字from{}(0%)to{}(100%)*/
      0% { background-color: Red; width: 100px; height: 100px; left: 10px; top: 10px;}
     50% { background-color: Blue; width: 200px; height: 200px; left: 300px; top: 300px; }
+    80%{ background-color: Blue; width: 200px; height: 200px; left: 900px; top: 20px; }
    100% { background-color: Green; width: 100px; height: 100px; left: 10px; top: 10px; }
   } 
             

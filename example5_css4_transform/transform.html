@@ -16,7 +16,9 @@
     /*padding為內容物跟容器間的距離*/
     padding: 10px;
     /*transition為變化,1秒鐘改變,linear固定速率*/
-    transition: all 1s linear;
+    transition: all 1s ease-in;
+      /*如果為transition: 0.5s 1s; 第一個是變化的時間 第二個是delay時間*/
+      /*linear為固定的速率,可代換為ease(預設值):先快後慢/ease-in:先慢後快/ease-out:先塊後慢,但前面的快較緩和*/
 }
 /*hover為滑鼠經過物體所觸發的事*/
 .transform:hover{

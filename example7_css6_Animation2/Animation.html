@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta Charset="UTF-8">
+        <title>css動畫</title>
+        <style>
+        ol{border:2px dotted orange;}
+        li{
+            margin:3px;
+            width:8em;
+            border-right-style:solid;
+             border-right-color:red;
+            
+        }
+@-webkit-keyframes v1 {
+from{border-right-width:0px;}
+to{border-right-width:150px;}
+  } 
+  @-webkit-keyframes v2 {
+from{border-right-width:0px;}
+to{border-right-width:50px;}
+  } 
+  @-webkit-keyframes v3 {
+from{border-right-width:0px;}
+to{border-right-width:200px;}
+  } 
+  #ball1{
+    -webkit-animation: v1 10s linear infinite;
+      border-left-width:150px;
+  }
+    #ball2{
+     -webkit-animation: v2 10s linear infinite;
+      border-right-width:50px;
+  }
+  
+    #ball3{
+    -webkit-animation: v3 10s linear infinite;
+      border-right-width:200px;
+  }
+  
+  
+    
+        </style>
+    </head>
+    <body>
+        <h1>最受歡迎運動</h1>
+        <ol>
+            <li id="ball1">籃球:150票</li>
+            <li id="ball2">棒球:50票</li>
+            <li id="ball3">桌球:200票</li>
+            </ol>
+    </body>
+</html>
