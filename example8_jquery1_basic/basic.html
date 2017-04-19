@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta Charset="UTF-8">
+        <title>jquery基本用用法</title>
+        <!--先用script元素的src屬性指定載入jquery函式庫檔-->
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    </head>
+    <body>
+        <p>
+        書名:<input id="book" type="text">
+        <button>新增</button>
+        </p>
+        <p>
+            現在有<span id="bookcount">0</span>本書
+            </p>
+            <ul id="list"></ul>
+            <!--把jquery語法寫在script中-->
+                <script>
+            // 指定按鍵的click處理函式
+            // $代表jquery,括弧內使用元素選擇器選擇button,呼叫函式click(類似Android的setOncliclisterner)函式內有function(類似Android的Oncliclisterner)
+                $("button").click(function(){
+                    // 使用id選擇器選擇list,再呼叫append方法
+                    $('#list').append($('<li>'+$('#book').val()+'</li>'));
+                    // 把輸入欄清空
+                    $('#book').val(" ");
+                    // 設置有幾本書的計數器
+                    $('#bookcount').text($('#list li').length);
+                });
+            </script>
+       
+    </body>
+</html>

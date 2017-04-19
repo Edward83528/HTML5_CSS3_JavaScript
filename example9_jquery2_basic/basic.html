@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta Charset="UTF-8">
+        <title>使用jquery基本使用</title>
+        <!--先用script元素的src屬性指定載入jquery函式庫檔-->
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+    </head>
+    <body>
+     <h1>資工系必修科目</h1>
+   
+     <script>
+    //  利用元素選擇器選擇li(even為Jquery自訂的擴充選擇器:指定偶數元素)
+    //  .css(name,values)設定樣式屬性
+         $("li:even").css("color","red");
+        //  設定多個樣式用法(以{}包住,分開)
+         $("li:odd").css({"color":"blue","text-shadow":"gray 4px 4px"});
+        //  匿名函數可指定參數為index,為元素索引值
+        //  each類似for迴圈自動逐筆呼叫
+        //  可透過this參數取得這一輪所處理的物件
+         $("li").each(function(index){
+            var size=1+index*0.5;
+            $(this).css("font-size",""+size+"em");
+         });
+          </script>
+    </body>
+</html>
