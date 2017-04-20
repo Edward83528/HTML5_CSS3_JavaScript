@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--要先到bootstrap網站下載bootstrap資源檔-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -36,8 +36,10 @@
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
         <li class="dropdown">
+            <!--ata-toggle="dropdown" 代表此項是下拉式選單  class="caret"代表有子功能的小圖示-->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
+              <!--下拉式選單內容-->
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
