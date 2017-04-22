@@ -8,17 +8,19 @@
  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.js"></script>
 
+<!--/
 </head>
 <body>
 <!--/////////////////////////////////////////////////////////////////////////-->
 <!--home頁面-->
 	<!--套用主題配色在dif內加 data-theme="c"（a:黑 | b:藍 | c:灰 | d:白 | e:橙）-->
-	<div data-role="page" id="home" data-theme="c">
+	<!--data-role為讓程式設計者自訂屬性  data-role="page"會自動占滿整個頁面-->
+	<div data-role="page" id="home" data-theme="F">
     	<!--在div中加上 data-role="header"為定義頁首-->
 	    <!--在div中加上data-position="fixed"讓頁首都固定在同一個位置,以至於網頁滑動不會影響頁首-->
 		<div data-role="header" data-position="fixed">
 		    <!--在頁首區加入首頁按鈕,加入data-role="button"和加入圖示 data-icon="home"-->
-		    <a href="#home" data-role="button" data-icon="home">首頁</a>
+		    <a href="#home" data-role="button"  data-icon="home">首頁</a>
 			<h1>容易記憶的安全密碼</h1>
 			<!--增加一容器div放置無次序清單並把它設為navbar(導覽列)風格 data-role="navbar"-->
 				<div  data-role="navbar"  data-theme="b">
@@ -40,6 +42,7 @@
 			<p>有沒有既好記、又不容易被人猜中的密碼？</p>
 			<p>可以，但得從人類「如何記憶」以及駭客「如何破解密碼」兩方面著手。</p>
 			<!--跳轉到下個頁面-->
+			<!--slide為滑進來 flip為翻轉進來-->
 			<a href="#Page2" data-transition="slide">繼續閱讀...</a>
 		</div>
 	<!--在div中加上 data-role="footer"為定義頁尾-->
@@ -83,7 +86,6 @@
 				<p>同樣地，請仔細觀看並依序記憶下列數字，時間也是二十秒：</p>
 				<p>800010005000200030007</p>
 				<p>請問您這次記得幾個數字？ 有沒有比上一個測驗進步？</p>
-	
 			</div>
 			</div>
 		</div>
