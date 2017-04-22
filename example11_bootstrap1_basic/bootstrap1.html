@@ -16,13 +16,13 @@
 }
 /*///////////*/
 .loader {
-  font-size: 10px;
-  margin: 50px auto;
+margin-left:5%; 
+  font-size: 1px;
   text-indent: -9999em;
-  width: 11em;
-  height: 11em;
+  width: 5em;
+  height: 5em;
   border-radius: 50%;
-  background: #ffffff;
+  background: #FF0000;
   background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
   background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
   background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
@@ -38,7 +38,8 @@
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #ffffff;
+    background: #FF0000;
+  /*background: #ffffff;*/
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
@@ -58,6 +59,11 @@
   bottom: 0;
   right: 0;
 }
+/*關鍵id為king往左流動*/
+#king{
+ float:left;
+}
+
 @-webkit-keyframes load3 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -78,14 +84,90 @@
     transform: rotate(360deg);
   }
 }
-.loader {
-    /*設定絕對位置*/
-	position: absolute;
-	right: 15px;
-	top: 8px;
-	color: DarkBlue;
+/*////////////*/
+.starburst {
+margin-left:50%; 
+	display:block;
+	width:6em;
+	height:6em;
+	background:#fe0;
+	-webkit-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	rotation:-45deg;
+	/*position:relative;*/
+	text-align:center;
+	text-decoration:none;
+	color:#000;
+	font-weight:bold;
+	font-family:Arial, sans-serif;
+}
+.starburst span {
+	display:block;
+	width:6em;
+	height:6em;
+	background:#fe0;
+	-webkit-transform:rotate(22.5deg);
+	-moz-transform:rotate(22.5deg);
+	rotation:22.5deg;
 }
 /*/////////*/
+.chkboxSwitch {
+margin-left:10%; 
+	width: 120px;
+	height: 40px;
+	background: #333;
+	border-radius: 50px;
+	position: relative;
+}
+
+.chkboxSwitch:before {
+	content: 'On';
+	position: absolute;
+	top: 12px;
+	left: 13px;
+	height: 2px;
+	color: #26ca28;
+	font-size: 16px;
+}
+
+.chkboxSwitch:after {
+	content: 'Off';
+	position: absolute;
+	top: 12px;
+	left: 84px;
+	height: 2px;
+	color: WhiteSmoke;
+	font-size: 16px;
+}
+
+.chkboxSwitch label {
+	display: block;
+	width: 62px;
+	height: 22px;
+	border-radius: 50px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 9px;
+	z-index: 1;
+	left: 12px;
+	background: #ddd;
+}
+
+.chkboxSwitch input[type=checkbox]:checked+label {
+	left: 50px;
+	background: #26ca28;
+}
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+
+/*//////////*/
   </style>
 </head>
 <body>
@@ -161,8 +243,21 @@
   <h1>認識節氣</h1>
    <!--btn-lg為大按鈕  btn-sm為小按鈕 btn-md為中按鈕-->
     	<!--按鈕樣式依各種情況改變btn-success為綠色	btn-info為淺藍 btn-warnin為只有字沒有框	btn-danger為紅色按鈕-->
-  <p><a class="btn btn-success btn-lg" href="#" role="button">學習更多</a></p>
-  <div class="loader">Loading...</div>
+  <div id="king"> <p><a class="btn btn-success btn-lg" href="#" role="button">學習更多</a></p>  </div>                                                                         
+  <div class="loader" id="king">Loading...</div>
+  <div id="king"><a href="#" class="starburst">
+   <span><span><span>
+      <br />NEW<br />CSS3<br />Starbursts!
+   </span></span></span>
+</a></div>
+    
+    	<div class="chkboxSwitch" id="king" >
+		<input type="checkbox" value="1" id="chkTest" name="chkTest">
+		<label for="chkTest"></label>
+	</div>
+</div>
+  
+		
   </div>
 </div>
 <!--面板區panel //////////////////////////////////////////////////////////////-->
