@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Exercises</title>
+	
+<script>
+
+var data = "Global Data";
+
+function Button1_onclick() {
+	  // 不寫var的變數會變成全域變數
+	var data = "local data";
+	txt1.value = window.data;//只的是全域變數
+	txt2.value = data;
+  
+}
+function Button2_onclick() {
+	var nTest;
+	nTest = new String("122.5") + 1  // 122.51
+	nTest = new Number("122.5") + 1  // 123.5
+	nTest = new Number(122.5) + 1  //123.5
+	nTest = 122.5 + 1 //123.5
+  nTest = "122.5" + 1  // 122.51
+	txt4.value = nTest;
+}
+function Button3_onclick() {
+	var x = 0.1;
+	var y = 0.2;
+	txt5.value = x + y;  //0.30000000000000004(電腦把xy轉2近位做運算會有誤差)
+	txt6.value = (x * 10000 + y * 10000) / 10000  // 0.3
+}
+function Button4_onclick() {
+	// var s = new String("0123456789中文字");
+	var s = "0123456789中文字";
+	txt7.value = s.length;  // 13
+	txt8.value = s.substr(2,5);//23456(從索引值0開始偏移五個位置)
+
+}
+function Button5_onclick() {
+	var s = "0123456789中文字";
+	var position = s.indexOf("567");//尋找567有沒有在字串中找的到,找不到傳回-1
+	if (position >= 0) {
+		txt10.value = "found";	
+	}
+	else {
+		txt10.value = "not found";
+	}
+}
+function Button6_onclick() {
+	var line = "";
+	var i = 1;
+	while (i <= 5) {
+		if (i == 4) {
+			i ++;
+			continue;
+		}
+		line = line + i.toString();
+		i = i + 1;
+	}
+	txt11.value = line;	//1235
+
+
+	var line = "";
+	var i = 1;
+	while (i <= 5) {
+		if (i == 4) {
+			i ++;
+			break;
+		}
+		line = line + i.toString();
+		i = i + 1;
+	}
+	txt12.value = line;	//123
+}
+
+function Button7_onclick() {
+		var line = "";
+	for (var i = 1; i <= 5; i++) {
+		line = line + "*";
+	}
+	txt13.value = line;//*****
+	
+	txt14.value = getLine(3, "*");//***
+
+}
+function getLine(count, what) {
+	var line = "";
+	for (var i = 1; i <= count; i++) {
+		line = line + what;
+	}
+	return line;
+}
+function Button8_onclick() {
+		var seasons = ["春", "夏", "秋", "冬"];  // B
+
+	seasons[3] = "暖冬"; 
+
+	var result = "";
+
+	for (var i = 0; i < seasons.length; i++) {
+		result += seasons[i] + "<br>";
+	}
+
+	debug.innerHTML = result;
+}
+
+function Button9_onclick() {
+
+	var obj = new Object(); 
+	var obj = {};  // B
+	obj.firstName = "Wolfgang";
+	obj.lastName = "Chien";
+	obj.sayHello = function () {
+		debug.innerHTML += "Hello! I'm " + this.lastName + "<br>";	
+	};
+	
+	debug.innerHTML = obj.firstName + "<br>";
+
+	obj.sayHello();
+}
+</script>
+
+
+</head>
+<body>
+<!--//////////////////////////////////////////////////////////////////////////-->
+ 	txt1:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt1" name="txt1" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button1" name="Button1"   
+		value="1. 點我一下，執行 JavaScript" onclick="Button1_onclick()">
+	<br><br>
+	txt2:
+    <INPUT type="text" id="txt2"  name="txt2" value="Result" size="40">
+    		<hr>
+ <!--//////////////////////////////////////////////////////////////////////////-->
+   txt3:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt3" name="txt3" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button3" name="Button3"   
+		value="2. 點我一下，執行 JavaScript" onclick="Button2_onclick()">
+	<br><br>
+	txt4:
+    <INPUT type="text" id="txt4"  name="txt4" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+   txt5:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt5" name="txt5" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button3" name="Button3"   
+		value="3. 點我一下，執行 JavaScript" onclick="Button3_onclick()">
+	<br><br>
+	txt6:
+    <INPUT type="text" id="txt6"  name="txt6" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+   txt7:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt7" name="txt7" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button4" name="Button4"   
+		value="4. 點我一下，執行 JavaScript" onclick="Button4_onclick()">
+	<br><br>
+	txt8:
+    <INPUT type="text" id="txt8"  name="txt8" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+   txt9:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt9" name="txt9" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button5" name="Button5"   
+		value="5. 點我一下，執行 JavaScript" onclick="Button5_onclick()">
+	<br><br>
+	txt10:
+    <INPUT type="text" id="txt10"  name="txt10" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+  txt11:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt11" name="txt11" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button6" name="Button6"   
+		value="6. 點我一下，執行 JavaScript" onclick="Button6_onclick()">
+	<br><br>
+	txt12:
+    <INPUT type="text" id="txt12"  name="txt12" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+  txt13:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt13" name="txt13" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button7" name="Button7"   
+		value="7. 點我一下，執行 JavaScript" onclick="Button7_onclick()">
+	<br><br>
+	txt14:
+    <INPUT type="text" id="txt14"  name="txt14" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+ txt15:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt15" name="txt15" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button8" name="Button8"   
+		value="8. 點我一下，執行 JavaScript" onclick="Button8_onclick()">
+	<br><br>
+	txt16:
+    <INPUT type="text" id="txt16"  name="txt16" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+ txt17:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt17" name="txt17" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button9" name="Button9"   
+		value="8. 點我一下，執行 JavaScript" onclick="Button9_onclick()">
+	<br><br>
+	txt18:
+    <INPUT type="text" id="txt18"  name="txt18" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+    <div id="debug"></div>
+</body>
+</html>
