@@ -5,36 +5,35 @@
   <title>JavaScript Exercises</title>
 	
 <script>
-
+// 全域變數
 var data = "Global Data";
-
+// javascript方法宣告方式
 function Button1_onclick() {
-	  // 不寫var的變數會變成全域變數
-	var data = "local data";
-	txt1.value = window.data;//只的是全域變數
+	  // 不寫var的變數會變成全域變,取變數名稱
+	var data = "local data";//javascript的變數宣告方式
+	txt1.value = window.data;//指的是全域變數
 	txt2.value = data;
-  
 }
 function Button2_onclick() {
 	var nTest;
-	nTest = new String("122.5") + 1  // 122.51
-	nTest = new Number("122.5") + 1  // 123.5
-	nTest = new Number(122.5) + 1  //123.5
+	nTest = new String("122.5") + 1  // 122.51,new一個字串物件
+	nTest = new Number("122.5") + 1  // 123.5,new出一個數字物件
+	nTest = new Number(122.5) + 1  //123.5,new出一個數字物件(有雙引號和沒雙引號是一樣的)
 	nTest = 122.5 + 1 //123.5
-  nTest = "122.5" + 1  // 122.51
+  nTest = "122.5" + 1  // 122.51(字串加數字還是字串)
 	txt4.value = nTest;
 }
 function Button3_onclick() {
 	var x = 0.1;
 	var y = 0.2;
-	txt5.value = x + y;  //0.30000000000000004(電腦把xy轉2近位做運算會有誤差)
+	txt5.value = x + y;  //0.30000000000000004(電腦把x和y做運算會轉2近位做運算會有誤差)
 	txt6.value = (x * 10000 + y * 10000) / 10000  // 0.3
 }
 function Button4_onclick() {
 	// var s = new String("0123456789中文字");
 	var s = "0123456789中文字";
 	txt7.value = s.length;  // 13
-	txt8.value = s.substr(2,5);//23456(從索引值0開始偏移五個位置)
+	txt8.value = s.substr(2,5);//23456(從索引值2開始偏移五個位置)
 
 }
 function Button5_onclick() {
