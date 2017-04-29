@@ -5,35 +5,36 @@
   <title>JavaScript Exercises</title>
 	
 <script>
-// 全域變數
+
 var data = "Global Data";
-// javascript方法宣告方式
+
 function Button1_onclick() {
-	  // 不寫var的變數會變成全域變,取變數名稱
-	var data = "local data";//javascript的變數宣告方式
-	txt1.value = window.data;//指的是全域變數
+	  // 不寫var的變數會變成全域變數
+	var data = "local data";
+	txt1.value = window.data;//只的是全域變數
 	txt2.value = data;
+  
 }
 function Button2_onclick() {
 	var nTest;
-	nTest = new String("122.5") + 1  // 122.51,new一個字串物件
-	nTest = new Number("122.5") + 1  // 123.5,new出一個數字物件
-	nTest = new Number(122.5) + 1  //123.5,new出一個數字物件(有雙引號和沒雙引號是一樣的)
+	nTest = new String("122.5") + 1  // 122.51
+	nTest = new Number("122.5") + 1  // 123.5
+	nTest = new Number(122.5) + 1  //123.5
 	nTest = 122.5 + 1 //123.5
-  nTest = "122.5" + 1  // 122.51(字串加數字還是字串)
+  nTest = "122.5" + 1  // 122.51
 	txt4.value = nTest;
 }
 function Button3_onclick() {
 	var x = 0.1;
 	var y = 0.2;
-	txt5.value = x + y;  //0.30000000000000004(電腦把x和y做運算會轉2近位做運算會有誤差)
+	txt5.value = x + y;  //0.30000000000000004(電腦把xy轉2近位做運算會有誤差)
 	txt6.value = (x * 10000 + y * 10000) / 10000  // 0.3
 }
 function Button4_onclick() {
 	// var s = new String("0123456789中文字");
 	var s = "0123456789中文字";
 	txt7.value = s.length;  // 13
-	txt8.value = s.substr(2,5);//23456(從索引值2開始偏移五個位置)
+	txt8.value = s.substr(2,5);//23456(從索引值0開始偏移五個位置)
 
 }
 function Button5_onclick() {
@@ -91,8 +92,7 @@ function getLine(count, what) {
 	return line;
 }
 function Button8_onclick() {
-    // javascript陣列宣告方式
-		var seasons = ["春", "夏", "秋", "冬"];
+		var seasons = ["春", "夏", "秋", "冬"];  // B
 
 	seasons[3] = "暖冬"; 
 
@@ -106,18 +106,67 @@ function Button8_onclick() {
 }
 
 function Button9_onclick() {
-//宣告一個物件
+
 	var obj = new Object(); 
-// 	var obj = {}; 
+	var obj = {};  // B
 	obj.firstName = "Wolfgang";
 	obj.lastName = "Chien";
 	obj.sayHello = function () {
 		debug.innerHTML += "Hello! I'm " + this.lastName + "<br>";	
 	};
-    //element.innerHTML 用以設定或存取元素 (element) 的內容。
+	
 	debug.innerHTML = obj.firstName + "<br>";
 
 	obj.sayHello();
+}
+function Box() {  //方法在javascript可以當物件
+	this.color = 'black';
+	this.paint = function (value) {
+		this.color = value;
+	}
+}
+function Button10_onclick() {
+
+	var objBox = new Box();//new出一個物件
+	objBox.paint("Blue");
+	txt20.value = objBox.color;
+
+}
+var Home = {
+	Box: function () {
+		this.color = 'black';
+		this.paint = function (value) {
+			this.color = value;
+		}
+	}
+		
+}
+
+function Button11_onclick() {
+	var objBox = new Home.Box();
+	objBox.paint("RoyalBlue");
+	txt22.value = objBox.color;
+}
+function Button12_onclick() { //這個寫法比上面好
+	var objBox = new Home.Box();
+	objBox.paint("RoyalBlue", function () {
+		txt24.value = objBox.color;
+	});
+}
+
+var Home = {
+	Box: function () {
+		this.color = 'black';
+		this.paint = function (value, cb) {
+			// delay 3 seconds.
+			//var now = new Date().getTime();
+		    //while (new Date().getTime() < now + 3000) { 
+		    //	/* do nothing */ 
+		    //} 
+			this.color = value;
+			cb();
+		}
+	}
 }
 </script>
 
@@ -222,6 +271,39 @@ function Button9_onclick() {
 	<br><br>
 	txt18:
     <INPUT type="text" id="txt18"  name="txt18" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+ txt19:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt19" name="txt19" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button10" name="Button10"   
+		value="9. 點我一下，執行 JavaScript" onclick="Button10_onclick()">
+	<br><br>
+	txt20:
+    <INPUT type="text" id="txt20"  name="txt20" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+ txt21:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt21" name="txt21" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button11" name="Button11"   
+		value="10. 點我一下，執行 JavaScript" onclick="Button11_onclick()">
+	<br><br>
+	txt22:
+    <INPUT type="text" id="txt22"  name="txt22" value="Result" size="40">
+    		<hr>
+<!--//////////////////////////////////////////////////////////////////////////-->
+txt23:
+ 	 <!--PlaceHolder為提示文字-->
+	<input type="text" id="txt23" name="txt23" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button12" name="Button12"   
+		value="11. 點我一下，執行 JavaScript" onclick="Button12_onclick()">
+	<br><br>
+	txt24:
+    <INPUT type="text" id="txt24"  name="txt24" value="Result" size="40">
     		<hr>
 <!--//////////////////////////////////////////////////////////////////////////-->
     <div id="debug"></div>
