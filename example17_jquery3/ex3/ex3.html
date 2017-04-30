@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnTry").click(function () {
+                // 改樣式,可以把樣式全部寫在beta-ribbon可自訂名稱,再用addclass增加進來
+                $("#betaRibbon").addClass("beta-ribbon");
+                $("#betaRibbon").css("font-family", "Arial");
+                // 也透過.css來改樣式
+                $("#betaRibbon").css({ "font-family": "Arial", "font-size": "3em" });
+            })
+        });
+    </script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+<div class="beta-ribbon-wrapper">
+  <div id="betaRibbon">
+    <a href="/about/#beta">Beta</a>
+  </div>
+</div>
+
+<div id="report">Report:<br></div>
+<hr>
+<form action="" method="put" onsubmit="return false;">
+  <button type="button" id="btnTry">Try</button>
+</form>
+</body>
+</html>
