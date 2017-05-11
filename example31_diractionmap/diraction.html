@@ -49,6 +49,9 @@
     // DirectionsRenderer類似貪食蛇的線
     var directionsDisplay = new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(map);
+    //  再創一個線讓我可以點第三點從a到b,再從b到c 之後可以把他搬到方法內用迴圈方式自己new出自己的線
+        var directionsDisplay2 = new google.maps.DirectionsRenderer();
+            directionsDisplay2.setMap(map);
     
     function DrawRoutePath() {
     	if (locations.length < 2)
@@ -65,7 +68,32 @@
 				directionsDisplay.setDirections(response);
 			}
 		});
+		
+		
+			if (locations.length < 3)
+    		return;
+    	var start = locations[1].position;
+		var end = locations[2].position
+		var request = {
+			origin : start,
+			destination : end,
+			travelMode : google.maps.TravelMode.DRIVING
+		};
+		directionsService.route(request, function(response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				directionsDisplay2.setDirections(response);
+			}
+		});
+		
+		
+		
+		
+		
 	}  // end of DrawRoutePath()
+	
+	
+	
+	
     
     
 </script>
