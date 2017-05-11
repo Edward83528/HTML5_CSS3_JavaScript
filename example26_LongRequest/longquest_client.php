@@ -19,8 +19,9 @@ Test: <input type="text" id="txtTest" />
 		responseText = xhr.responseText;
 		lastEvent = responseText.replace(data, "");
 		document.getElementById("debug").innerHTML = lastEvent;
-	//	 obj = JSON.parse(lastEvent);
-		// document.getElementById("debug").innerHTML = obj.data + "%";
+		// JSON.parse把JSON變物件
+		 obj = JSON.parse(lastEvent);
+		 document.getElementById("debug").innerHTML = obj.data + "%";
 		data = responseText;
 	}
 	xhr.send(null);
