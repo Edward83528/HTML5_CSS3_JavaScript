@@ -4,8 +4,8 @@ body {
 	letter-spacing: 1px;
 	padding: 0 !important;
 	color: #4a4949 !important;
-	background-color:#3fabb9;
 	margin:0;
+		background-color:#3fabb9;
 }
 
 ul, li {
@@ -49,11 +49,12 @@ body .nav {
 body .content {
 	padding:0;
 	margin:0;
+
 }
 body .top_box {
     text-align:center;
 	/*height:50px;*/
-	background-color:#3fabb9;
+
 }
 body .top_box img {
 	width:100%;
@@ -68,7 +69,7 @@ body .top_box h1 a {
 body .top_box .arrow a {
     display: block;
     float:left;
-    background-color:#2d8e9b;
+
     border-radius:4px;
     color:#FFF;
     /* text-indent:-9999px; */
@@ -109,6 +110,7 @@ body .bread {
 body .bread a {
 	color: #979797;
 	text-decoration:none;
+		background-color:#ade1f0;
 }
 body .bread a:hover {
 	color: #000;
@@ -138,6 +140,7 @@ body .editbox {
 	border: 1px #d3d3d3 solid;
 	box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
 	line-height: 24px;
+		background-color:#ff0000;
 }
 body .editbox img {
 	width:100%;
