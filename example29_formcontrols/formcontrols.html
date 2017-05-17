@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -12,48 +12,58 @@
 <body>
 	<div data-role="page">
 		<div data-role="content">
-			<form method="post" action="echo.php">
-
-			<div data-role="fieldcontain">
-				<label for="txtInputText">Input text:</label> 
-				<input type="text"
-					name="txtInputText" id="txtInputText" value="" placeholder="請輸入資料" />
-			</div>
-			
-			<div data-role="fieldcontain">
+		    <!--建立一表單-->
+       <form method="post" action="echo.php">
+           <!--在 jQuery Mobile 中，每一組的表單欄位會有一個 label 物件和一個表單物件(例如input、checkbox)-->
+           <!--並且 label 要加入 for=”表單物件ID” 屬性來指定對應的表單物件-->
+           <!--如果在表單欄位的外面加入 <div data-role=”fieldcontain”> </div>-->
+           <!--，表單會根據螢幕畫面做最適當的配置：寬螢幕的 label 會在 input 的左手邊-->
+           <!--，窄小的螢幕在 fieldcontain 之間會多一條分隔線。-->
+           <!--如果想要隱藏標籤，可以在 fieldcontain 加入 class=”ui-hide-label”，或是在 label 加入 class=”ui-hidden-accessible”。-->
+           <!--一般輸入框===============================================-->
+           	<div data-role="fieldcontain">
+           	<label for="txtInputText">Input text:</label> 
+           	<!--placeholder 輸入框預設文字-->
+				<input type="text" name="txtInputText" id="txtInputText" value="" placeholder="請輸入資料" />
+				</div>
+			  <!--search框===============================================-->	
+					<div data-role="fieldcontain">
 				<label for="txtSearch">Search Input:</label>
 				<input type="search" name="txtSearch" id="txtSearch" value="" />
 			</div>
-
-
-			<div data-role="fieldcontain">
+              <!--多行文字框===============================================-->
+              	<div data-role="fieldcontain">
 				<label for="txtTextArea">Text area:</label>
 				<textarea name="txtTextArea" id="txtTextArea"></textarea>
 			</div>
-
-			<div data-role="fieldcontain">
+		
+				  <!--拖拉元件===============================================-->
+				<div data-role="fieldcontain">
 				<label for="rngScore">Input Range:</label>
 				<input type="range" name="rngScore" id="rngScore" value="60" min="0" max="100" />
 			</div>
-<!--本來是下拉式選單加入 data-role="slider"變開關樣式-->
-			<div data-role="fieldcontain">
+	  <!--開關===============================================-->
+	<div data-role="fieldcontain">
 				<label for="sltOnOff">Switch (select):</label>
+				<!--沒有加data-role="slider"開關會是下拉式選單-->
 				<select name="sltOnOff" id="sltOnOff" data-role="slider">
 					<option value="off">Off</option>
 					<option value="on">On</option>
 				</select>
 			</div>
-
-
-			<fieldset data-role="controlgroup">
+			 <!--多選核取方塊===============================================-->
+			<!--如果是data-role="controlgroup" 核取方塊是緊密的 , data-role="fieldcontain"核取方塊是分開的-->
+			<!--fieldset / legend 不僅僅是成組的標籤，同時也是美化表單中重要的標籤-->
+			 	<fieldset data-role="controlgroup">
+			 	    	<!--<legend>標籤定義表單標題-->
 				<legend>Your hobby:</legend>
 				<label><input type="checkbox" name="chkReading" /> Reading </label>
 				<input type="checkbox" name="chkMusic"  id="chkMusic" /><label for="chkMusic">Music</label>
 				<input type="checkbox" name="chkSport"  id="chkSport" /><label for="chkSport">Sport</label>
 			</fieldset>
-
-
-			<fieldset data-role="controlgroup">
+			 
+			  <!--單選===============================================-->
+			  	<fieldset data-role="controlgroup">
 					<legend>Choose a pet:</legend>
 			     	<input type="radio" name="rdoPet" id="rdoPet0" value="0" checked="checked" />
 			     	<label for="rdoPet0">Cat</label>
@@ -67,12 +77,14 @@
 			     	<input type="radio" name="rdoPet" id="rdoPet3" value="3"  />
 			     	<label for="rdoPet3">Lizard</label>
 			</fieldset>
-
-<!--data-native-menu="false" 下拉式選單變成跳出框框樣式-->
-			<fieldset data-role="controlgroup">
-				<label for="sltCity[]">City:</label>
+			   <!--下拉式選單===============================================-->
+			   	<fieldset data-role="controlgroup">
+				<label for="sltCity">City:</label>
+			<!--加入data-native-menu="false"下拉式選單會變成跳出一個視窗選單 false比較好看-->
+			<!--加入 multiple選單就可以多選-->
 				<select name="sltCity[]" id="sltCity" data-native-menu="false" multiple>
-				   <option value="-1" data-placeholder="true">請選擇:</option>
+				    <!--加入data-placeholder="true" 選項就不可點-->
+				   <option value="-1"  data-placeholder="true">請選擇:</option>
 				   <option value="0">台北</option>
 				   <option value="1">台中</option>
 				   <option value="2">台南</option>
@@ -80,16 +92,26 @@
 				</select>
 			</fieldset>
 
-			
-			<div class="ui-grid-a">
+   	  <!--button===============================================-->
+			  <!--jQueryMobile 的 Grid 其實是個很特別的東西，表面上看起來像表格，骨子裡卻是紮紮實實的 div 排列-->
+			  <!--jQuery Mobile 的 Grid 結構，Grid 比較特別的地方，是由 1~5 個 div 所組成-->
+			  <!--外層使用 ui-grid- 的樣式，內層使用 ui-block- 的樣式，這裡有個非常重要也需要注意地方-->
+			  <!--，就是 ui-grid- 的後方接著字母 a 代表兩欄，如果改成 b 就是三欄 -->
+              <!--ui-block-a：第 1 欄-->
+              <!--ui-block-b：第 2 欄-->
+              <!--ui-block-c：第 3 欄-->
+              <!--ui-block-d：第 4 欄-->
+              <!--ui-block-e：第 5 欄-->
+			  	<div class="ui-grid-a">
 				<div class="ui-block-a"><input type="submit" name="btnOK" value="OK" /></div>
 				<div class="ui-block-b"><input type="submit" name="btnCancel" value="Cancel" /></div>
 			</div>
-
+			   <!--===============================================-->
 			</form>
+
 		</div>
-		<!-- page content -->
+		<!--content  end-->
 	</div>
-	<!-- page -->
+	<!-- page end-->
 </body>
 </html>
