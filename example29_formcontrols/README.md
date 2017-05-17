@@ -27,7 +27,7 @@ jQuery Mobile 具備以下幾個特色：
 
 11.多樣化的 UI
 
-#一個 jQuery Mobile 的結構通常會預先載入兩個 javascript 一個 CSS
+# 一個 jQuery Mobile 的結構通常會預先載入兩個 javascript 一個 CSS
 
 <link rel="stylesheet" href="jquery.mobile.min.css">
 
@@ -35,11 +35,12 @@ jQuery Mobile 具備以下幾個特色：
 
 <script src="jquery.mobile.min.js"></script>
 
-#預載的 js 都會放在 HTML 的 header 裡頭，而 body 裏面會是由一個個的 page 組成 ( 想像一下手機一頁一頁切換 )，
+# 預載的 js 都會放在 HTML 的 header 裡頭，而 body 裏面會是由一個個的 page 組成 ( 想像一下手機一頁一頁切換 )，
 
-#每個 page 內通常會有 header、footer 和 ui-content 這三個 div 區塊，而內容通常也都會放在 ui-content 這個 div 區塊裡頭。
+# 每個 page 內通常會有 header、footer 和 ui-content 這三個 div 區塊，而內容通常也都會放在 ui-content 這個 div 區塊裡頭。
 
 <head>
+
   <title>jQuery Mobile</title>
   
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile.min.css">
@@ -51,6 +52,7 @@ jQuery Mobile 具備以下幾個特色：
 </head>
 
 <body>
+
   <div data-role="page">  // page
   
     <div data-role="header">  // header
@@ -75,7 +77,7 @@ jQuery Mobile 具備以下幾個特色：
   
 </body>
 
-#一個 jQuery Mobile 通常會有多個 page，不過就算有很多個 page，一次也只會顯示其中一頁，而 page 是使用 id 進行區隔。( id 不能重複 )
+# 一個 jQuery Mobile 通常會有多個 page，不過就算有很多個 page，一次也只會顯示其中一頁，而 page 是使用 id 進行區隔。( id 不能重複 )
 
 <div id="page1" data-role="page">
 
@@ -95,7 +97,7 @@ jQuery Mobile 具備以下幾個特色：
   
 </div>
 
-#page 之間的切換，可以利用 href，直接切換到指定的 page Id，並利用 使用 data-transition 設定切換效果，或設定 data-rel="back" 用同樣效果返回。
+# page 之間的切換，可以利用 href，直接切換到指定的 page Id，並利用 使用 data-transition 設定切換效果，或設定 data-rel="back" 用同樣效果返回。
 
 page 具有以下幾種切換效果：
 default：預設值 ( fade )
@@ -120,7 +122,7 @@ turn：轉向下一頁
 
 none：直接切換
 
-#button 有兩種，分別是用 a 來產生，或直接用 button 來創造，但不論用哪種方式，都必須加上 class="ui-btn"。
+# button 有兩種，分別是用 a 來產生，或直接用 button 來創造，但不論用哪種方式，都必須加上 class="ui-btn"。
 
 <a href="#" class="ui-btn">Anchor</a>
 
@@ -146,7 +148,7 @@ none：直接切換
 
 <button class="ui-btn ui-btn-icon-left ui-icon-arrow-l">arrow-l</button>
 
-#文字輸入欄位，藉由不同的 type，可以定義不同的輸入欄位，例如純文字、密碼或搜尋...等
+# 文字輸入欄位，藉由不同的 type，可以定義不同的輸入欄位，例如純文字、密碼或搜尋...等
 
 <div class="ui-field-contain">
 
@@ -172,9 +174,9 @@ none：直接切換
   
 </div>
 
-#header 與 footer 是在 App 畫面設計中很常見的元素，而在 jQuery Mobile 裡頭是使用『data attribute』來進行定義
+# header與footer是在App畫面設計中很常見的元素，而在 jQuery Mobile 裡頭是使用『data attribute』來進行定義
 
-#而位置是否固定，則是使用『data-position』來定義。
+# 而位置是否固定，則是使用『data-position』來定義。
 
 <div data-role="header" data-position="fixed">
 
@@ -188,9 +190,8 @@ none：直接切換
   
 </div>
 
-#導航列選單，基本上一列只會有五個欄位，畢竟是在手機裝置上操作，超過五個欄位手指就會不方便點擊，
-
-#所以最多一列五個欄位，若超過，則會變成一列兩個欄位依序排列下去。
+# 導航列選單,基本上一列只會有五個欄位，畢竟是在手機裝置上操作，超過五個欄位手指就會不方便點擊，
+# 所以最多一列五個欄位，若超過，則會變成一列兩個欄位依序排列下去。
 
 <div data-role="navbar">
 
@@ -204,11 +205,11 @@ none：直接切換
   
 </div>
 
-#radio-button 『單選』的按鈕，在 jQuery Mobile 裡頭，若為垂直排列 ( data-type="vertical" )，則會是圓形可點選，
+# radio-button 『單選』的按鈕，在 jQuery Mobile 裡頭，若為垂直排列 ( data-type="vertical" )，則會是圓形可點選，
 
-#若是水平排列 ( data-type="horizontal" )，則是矩形按鈕的樣式，
+# 若是水平排列 ( data-type="horizontal" )，則是矩形按鈕的樣式，
 
-#如果遇到變成複選的情況，可以檢查看看 name 是否重複，重複就會變成可複選的情形。
+# 如果遇到變成複選的情況，可以檢查看看 name 是否重複，重複就會變成可複選的情形。
 
 
 <form>
@@ -232,9 +233,9 @@ none：直接切換
   </fieldset>
 </form>
 
-#checkbox 『複選』的按鈕，，在 jQuery Mobile 裡頭，若為垂直排列 ( data-type="vertical" )，則會是小正方形可勾選
+# checkbox 『複選』的按鈕，，在 jQuery Mobile 裡頭，若為垂直排列 ( data-type="vertical" )，則會是小正方形可勾選
 
-#若是水平排列 ( data-type="horizontal" )，則是矩形按鈕的樣式。
+# 若是水平排列 ( data-type="horizontal" )，則是矩形按鈕的樣式。
 
 <form>
   <fieldset data-role="controlgroup">
@@ -257,7 +258,7 @@ none：直接切換
   
 </form>
 
-#flip-switch 按鈕的開關，如果直接看程式碼，可以發現他其實就是一個 select 的概念
+# flip-switch 按鈕的開關，如果直接看程式碼，可以發現他其實就是一個 select 的概念
 
 <form>
 
@@ -273,9 +274,9 @@ none：直接切換
   
 </form>
 
-#list-view  清單，也就是 HTML 裡的 ul 和 li，若 li 設定為『 data-role="list-divider" 』，該 li 就會變成類似標題的分隔符號
+# list-view  清單，也就是 HTML 裡的 ul 和 li，若 li 設定為『 data-role="list-divider" 』，該 li 就會變成類似標題的分隔符號
 
-#除此之外，清單也可以使用 filter 的功能 ( data-filter="true" )，在最上方加入一個類似搜尋的欄位。
+# 除此之外，清單也可以使用 filter 的功能 ( data-filter="true" )，在最上方加入一個類似搜尋的欄位。
 
 
 <ul data-role="listview" data-inset="true" data-divider-theme="a" data-filter="true">
@@ -307,8 +308,8 @@ none：直接切換
   
 </ul>
 
-#table 表格，有別於一般的表格，jQuery Mobile 還設計了一個按鈕讓我們點選快速瀏覽欄位
-#設定 data-mode="columntoggle" 就會出現。
+# table 表格，有別於一般的表格，jQuery Mobile 還設計了一個按鈕讓我們點選快速瀏覽欄位
+# 設定 data-mode="columntoggle" 就會出現。
 
 <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
 
