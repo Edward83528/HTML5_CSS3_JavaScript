@@ -43,13 +43,18 @@
    有時間的話學
    
    3d three.js和d3.js
+   
    //////////////////////////////////////////////////////////////////////////////
    
+<<<<<<< HEAD
    # example11 bootstrap基本練習
    
    # example25 表單套bootstrap樣板
+=======
+   - example25 表單套bootstrap樣板
+>>>>>>> 7011474664f246c91daf385aed3ced38fa5890b3
    
-   # example29 jquery mobile框架學習
+   - example29 jquery mobile框架學習
  
  
  
