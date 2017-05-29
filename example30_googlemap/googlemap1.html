@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table Lab</title>
+<link rel="stylesheet" href="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="jquery-1.9.1.min.js"></script>
+<script src="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<!--引用google金鑰-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAtDw3tFeW_dsIeDt6gi9H-GD5VXRzcGXA"></script>
+
+
+</head>
+<body>
+    <!--第一個page開始-->
+<div data-role="page">
+    <!--header開始-->
+    <div data-role="header" data-position="fixed">
+        <h1>Google地圖</h1>
+    </div>
+    <!--header結束-->
+    <!--content開始-->
+	<div data-role="content">
+	    <!--創造 一個div來存放地圖-->
+<div id="googleMap" style="width: 100%; height: 400px;"></div>
+
+	</div>
+	<!--content結束-->
+</div>
+<!--第一個page結束-->
+
+<script>
+    var mapProp = {
+        // 定義地圖中心點
+        center : new google.maps.LatLng(25.047755664726715,121.51703953742981),
+        // zoom越大離地表越近
+        zoom : 12,
+        //  mapTypeId定義地圖類型:
+        //     roadmap 可顯示預設道路地圖檢視。此為預設的地圖類型。
+        //   satellite 可顯示 Google 地球衛星影像
+        //   hybrid 可顯示混合的一般檢視與衛星檢視
+        //   hybrid 可根據地形資訊顯示實體地圖
+        mapTypeId : google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(
+            $("#googleMap")[0],mapProp);
+            // 建立圖標
+    var marker = new google.maps.Marker({
+           position: new google.maps.LatLng(25.047755664726715,121.51703953742981)
+           animation: google.maps.Animation.BOUNCE
+           });
+    // 設置圖標
+    marker.setMap(map);
+    
+</script>
+
+	
+</body>
+</html>
